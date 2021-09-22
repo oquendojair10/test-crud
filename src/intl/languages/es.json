@@ -1,0 +1,17 @@
+{
+  "logIn": "Ingresar",
+  "login": "Ingreso",
+  "email": "Correo",
+  "password": "Contraseña",
+  "requiredField": "{fieldName} es requerido",
+  "formatEmail": "{fieldName} no es un correo válido",
+  "home": "Inicio",
+  "logout": "Cerrar sesión",
+  "title": "Titulo",
+  "body": "Descripción",
+  "new": "Nuevo",
+  "userid": "ID Usuario",
+  "edit": "Editar",
+  "delete": "Eliminar",
+  "cancel": "Cancelar"
+}

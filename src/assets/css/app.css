@@ -1,0 +1,69 @@
+/* Use */
+/* { backgroundColor: 'var(--primary)'} */
+:root {
+  --primary: #61dafb;
+  --secondary: #dbdbdb;
+  --headers-color: #00101a;
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth-header-menu {
+  display: flex;
+}
+
+/* Antd mods */
+.app-logo {
+  height: 45px;
+}
+
+.ant-input-number,
+.ant-picker {
+  min-width: 100% !important;
+}
+
+.ant-menu-dark,
+.ant-menu-light,
+.ant-layout-sider-trigger {
+  background: transparent !important;
+}
+
+.ant-layout-sider,
+.ant-layout-header {
+  background: var(--headers-color) !important;
+}
+
+/* body[data-theme='light'] .ant-layout-sider-trigger {
+  color: black;
+} */
+
+.ant-breadcrumb > span:last-child {
+  color: var(--primary) !important;
+}
+
+.main-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 113px;
+  margin: 0 12px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.p-0-card > .ant-card-body {
+  padding: 0;
+}
+
+.page-title {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+}

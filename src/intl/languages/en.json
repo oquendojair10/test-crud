@@ -1,0 +1,17 @@
+{
+  "logIn": "Log in",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "requiredField": "{fieldName} is required",
+  "formatEmail": "{fieldName} is not a valid email",
+  "home": "Home",
+  "logout": "Log out",
+  "title": "Title",
+  "body": "Body",
+  "new": "New",
+  "userid": "User ID",
+  "delete": "Delete",
+  "edit": "Edit",
+  "cancel": "Cancel"
+}
