@@ -1,2 +1,3 @@
 export const LOGIN_URL = '/login'
-export const TODO_URL = '/a622d6a70c564961aaeaea2a9f7dfb4d/todos'
+export const TODO_URL = '/a82c4c334dff4b1db3bae79e7ea36623/todos'
+export const TYPES_URL = '/a82c4c334dff4b1db3bae79e7ea36623/types'

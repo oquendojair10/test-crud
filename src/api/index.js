@@ -1,6 +1,7 @@
 import axios from 'axios'
 import user from './User'
 import todo from './Todo'
+import types from './Types'
 
 axios.interceptors.response.use((response) => {
   return response
@@ -8,7 +9,8 @@ axios.interceptors.response.use((response) => {
 
 const api = {
   user,
-  todo
+  todo,
+  types
 }
 
 export default api

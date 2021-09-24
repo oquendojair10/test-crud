@@ -13,5 +13,8 @@
   "userid": "ID Usuario",
   "edit": "Editar",
   "delete": "Eliminar",
-  "cancel": "Cancelar"
+  "cancel": "Cancelar",
+  "actions": "Acciones",
+  "type": "type",
+  "select": "Seleccionar"
 }

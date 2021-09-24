@@ -9,9 +9,9 @@ class User extends AbstractApi {
 
   login = ({ obj }) =>
     axios.post(`${process.env.REACT_APP_API}${LOGIN_URL}`, obj)
-  
-  testGet = () =>
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+
+  testGet = () => axios.get('https://jsonplaceholder.typicode.com/posts')
+  loadAll = () => axios.get('https://jsonplaceholder.typicode.com/users')
 }
 
 export default new User()

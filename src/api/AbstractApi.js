@@ -5,7 +5,6 @@ class AbstractApi {
   constructor(url) {
     this.url = `${process.env.REACT_APP_API}${url}`
   }
-
   findAll = ({ token, params }) =>
     axios.get(this.url, getHeaders(token, params))
 

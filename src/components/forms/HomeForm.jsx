@@ -1,13 +1,15 @@
+import { useEffect } from 'react'
 import api from '../../api'
 import { useIntl } from 'react-intl'
 import { useMutation } from '../../utils/functions/hooks'
 
-import { Button, Card, Form, Input} from 'antd'
-import { useEffect } from 'react'
+import { Button, Card, Form, Input } from 'antd'
+import { Select } from 'antd'
+const { Option } = Select
 
 const { useForm, Item } = Form
 
-function HomeForm({ refetch, defaultValue,  handleCancel }) {
+function HomeForm({ refetch, defaultValue, handleCancel, types, users }) {
   const { formatMessage } = useIntl()
   const [form] = useForm()
   const url = !defaultValue ? api.todo.create : api.todo.edit
@@ -15,72 +17,83 @@ function HomeForm({ refetch, defaultValue,  handleCancel }) {
     setTimeout(() => {
       handleCancel()
       refetch(data)
-    }, 1500);
+    }, 1500)
   }
 
   useEffect(() => {
     if (defaultValue) {
-      const { title, body, userId } = defaultValue
-      form.setFieldsValue({
-        title,
-        body,
-        userId
-      })
+      form.setFieldsValue(defaultValue)
     }
   }, [])
-  
+
   const [submit, { loading }] = useMutation(url, {
-    onCompleted
+    onCompleted,
   })
 
   const onFinish = (values) => {
     submit({ obj: values, id: defaultValue?._id })
   }
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-6">
+    <div className='container'>
+      <div className='row'>
+        <div className='col-6'>
           <Card>
             <div>
-              <h2>{formatMessage({ id: `${!defaultValue ? 'new' : 'edit'}`})} Todo</h2>
+              <h2>
+                {formatMessage({ id: `${!defaultValue ? 'new' : 'edit'}` })}{' '}
+                Todo
+              </h2>
             </div>
-            <Form form={form} layout="vertical" onFinish={onFinish}>
+            <Form form={form} layout='vertical' onFinish={onFinish}>
               <Item
-                name="userId"
+                name='userId'
                 label={formatMessage({ id: 'userid' })}
+                rules={[{ required: true }]}
+              >
+                <Select placeholder={`${formatMessage({ id: 'select' })}`}>
+                  {users.map((item) => (
+                    <Option value={item.id}>{item.name}</Option>
+                  ))}
+                </Select>
+              </Item>
+              <Item
+                name='title'
+                label={formatMessage({ id: 'title' })}
                 rules={[{ required: true }]}
               >
                 <Input />
               </Item>
               <Item
-                name="title"
-                label={formatMessage({ id: 'title' })}
+                name='type'
+                label={formatMessage({ id: 'type' })}
                 rules={[{ required: true }]}
-                >
-                <Input />
+              >
+                <Select placeholder={`${formatMessage({ id: 'select' })}`}>
+                  {types.map((item) => (
+                    <Option value={item._id}>{item.name}</Option>
+                  ))}
+                </Select>
               </Item>
               <Item
-                name="body"
+                name='body'
                 label={formatMessage({ id: 'body' })}
                 rules={[{ required: true }]}
               >
                 <Input />
               </Item>
-              <Item noStyle>
+              <Item>
                 <Button
-                  type="primary"
-                  htmlType="submit"
+                  type='primary'
+                  htmlType='submit'
                   loading={loading}
                   block
                 >
-                  {formatMessage({id: `${!defaultValue ? 'new' : 'edit'}`})}
+                  {formatMessage({ id: `${!defaultValue ? 'new' : 'edit'}` })}
                 </Button>
-                <Button
-                  type="secondary"
-                  onClick={handleCancel}
-                  block
-                >
-                  {formatMessage({id: 'cancel'})}
+              </Item>
+              <Item noStyle>
+                <Button type='secondary' onClick={handleCancel} block>
+                  {formatMessage({ id: 'cancel' })}
                 </Button>
               </Item>
             </Form>

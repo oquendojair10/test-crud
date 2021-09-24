@@ -13,5 +13,8 @@
   "userid": "User ID",
   "delete": "Delete",
   "edit": "Edit",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "actions": "Actions",
+  "type": "Tipo",
+  "select": "Select"
 }

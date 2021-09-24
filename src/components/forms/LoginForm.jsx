@@ -15,9 +15,9 @@ const LoginForm = ({ handleLogin }) => {
   useEffect(() => {
     form.setFieldsValue({
       email: 'test@mai.com',
-      password: '124'
+      password: '124',
     })
-  },[])
+  }, [])
   // const { data, loading: loadingGet, error, refetch } = useGet(api.user.testGet, {})
   // refetch({ token: '1234' })
   // console.log(data, loadingGet)
@@ -31,17 +31,17 @@ const LoginForm = ({ handleLogin }) => {
   })
 
   const onFinish = (values) => {
-    login({ obj: values })
+    // login({ obj: values })
     // console.log(values)
-    // handleLogin(
-    //   {
-    //     _id: '12345',
-    //     firstName: 'Jonh',
-    //     lastName: 'Doe',
-    //     role: 'Admin',
-    //   },
-    //   '13456',
-    // )
+    handleLogin(
+      {
+        _id: '12345',
+        firstName: 'Jonh',
+        lastName: 'Doe',
+        role: 'Admin',
+      },
+      '13456',
+    )
   }
 
   return (
